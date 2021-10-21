@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- <input type="text" name="" id="abtn" value="" />
+		<input type="button" name="" id="btn" value="比较" />
+		<input type="text" name="" id="bbtn" value="" /> -->
+		<script>
+		//Two1
+		document.write('<h1>jsTwo.1</h1>');
+		let a1 = 10;
+		let b1 = 5;
+		if(a1>b1){
+			document.write('a大于b')
+		}else if (a<b) {
+			document.write('a小于b')
+		}else {
+			document.write('a等于b')
+		}
+		document.write('<hr>');
+		//Two2
+		document.write('<h1>jsTwo.2</h1>');
+		let a = 5
+		if (a%5===0){
+			document.write(`a的值为${a}可以被5整除,整除值为${a/5}`)
+		}else {
+			document.write('不可以被5整除')
+		}
+		document.write('<hr>');
+		//Two3
+		document.write('<h1>jsTwo.3</h1>');
+		let num='';
+		for(let i=1;i<=100;i++){
+			if(i%2===0){
+				num=num+i+' ';
+			}
+		}
+		document.write(`100以内的偶数：${num}`);
+		document.write('<hr>');
+		//Two4
+		document.write('<h1>jsTwo.4</h1>');
+		let c=1
+		let num1 = '';
+		while(c<=100){
+			c++;
+			if(c%7===0){
+				num1=num1+c+' ';
+			}
+		}
+		document.write(`100以内可以被7整除的有:${num1}`);
+		document.write('<hr>');
+		//Two5
+		document.write('<h1>jsTwo.5</h1>');
+		let aOne =Number(prompt('请输入a的值'));
+		let bOne =Number(prompt('请输入b的值'));
+		let cOne =Number(prompt('请输入c的值'));
+		if(aOne>bOne && aOne>cOne){
+			document.write(`三个中最大的值为a:${aOne}`)
+		}else if(bOne>aOne && bOne>cOne){
+			document.write(`三个中最大的值为b:${bOne}`)
+		}else if(cOne>aOne && cOne>bOne){
+			document.write(`三个中最大的值为c:${cOne}`)
+		}else{
+			document.write('他们三个值相同');
+		}
+		document.write('<hr>');
+		//Three1
+		document.write('<h1>jsThree.1</h1>');
+		let num2 = '';
+		let num3 = '';
+		for(let i = 1;i<=100;i++){
+			if(i%2===0){
+				num2=num2+i+' ';
+			}else {
+				num3=num3+i+' ';
+			}
+		}
+		document.write(`100以内的偶数为:${num2}`);
+		document.write('<br>');
+		document.write(`100以内的奇数为:${num3}`);
+		document.write('<h1>jsThree.2</h1>');
+		document.write('<hr>');
+		//three2
+		function test(){
+			let len = arguments.length;
+			let sum = 0;
+			let num12 = '';
+			let num13 = '';
+			 for(let i=len-1;i>=0;i--){    //切记数组或者类似数组的最后一个元素为长度-1
+				 sum=sum+Number(arguments[i]) ;
+				 if(i===0){
+					 num12+=arguments[i];
+				 }else{
+					 num12=num12+arguments[i]+'+';
+				 }
+			 }
+			 return num13 =`${num12}=${sum}`
+		}
+		document.write(test(1,2,3,4,5,6,7,8,9,10));
+		document.write('<br>')
+		document.write(test(10,9,3,6,1));
+		document.write('<hr>');
+		//four1
+		document.write('<h1>four</h1>')
+		document.write('<input type="text" class="abtn" placeholder="请输入a的值">')
+		document.write('<input type="button" class="btn" value="比较">')
+		document.write('<input type="text" class="bbtn" placeholder="请输入b的值">')
+		document.write('<p class="para"></p>')
+		let abtn = document.querySelector('.abtn');
+		let btn = document.querySelector('.btn');
+		let bbtn = document.querySelector('.bbtn');
+		let para = document.querySelector('.para');
+		btn.onclick=function(){
+			if(isNaN(abtn.value) || isNaN(bbtn.value)){
+				para.style.color='red';
+				para.textContent='请输入数字类型'
+			}else if(abtn.value==='' || bbtn.value===''){
+				para.style.color='red';
+				para.textContent='有一个值为空请重新比较'
+			}else if(abtn.value>bbtn.value){
+				para.style.color='green';
+				para.textContent='a的值大于b的值'
+			}else if(abtn.value<bbtn.value){
+				para.style.color='green';
+				para.textContent='b的值大于a的值'
+			}else {
+				para.style.color='green';
+				para.textContent='b的值等于a的值'
+			}
+		}
+		</script>
+	</body>
+</html>
